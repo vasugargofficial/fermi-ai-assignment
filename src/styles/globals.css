@@ -1,0 +1,15 @@
+@import "@/styles/tokens/index.css";
+@import "@/styles/themes.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-body);
+}
