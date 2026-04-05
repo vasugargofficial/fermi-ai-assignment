@@ -6,6 +6,11 @@ import clsx from "clsx";
 import React from "react";
 import { Button } from "@/components/ui/Button/Button";
 
+const NAV_ITEMS = [
+  { label: "Dashboard", icon: "🏠", href: "/dashboard" },
+  { label: "Analytics", icon: "📊", href: "/analytics" },
+];
+
 export const DesktopSidebar: React.FC<DesktopSidebarProps> = ({
   isCollapsed,
   onToggleCollapse,
@@ -14,26 +19,36 @@ export const DesktopSidebar: React.FC<DesktopSidebarProps> = ({
     <aside
       className={clsx(
         styles.sidebar,
-        isCollapsed && styles.collapsed,
-        styles.desktop
+        styles.desktop,
+        isCollapsed && styles.collapsed
       )}
     >
-      {/* Toggle Button */}
-      <Button variant="ghost" onClick={onToggleCollapse} className={styles.toggle}>
-        {isCollapsed ? "→" : "←"}
-      </Button>
+      {/* Header / Toggle */}
+      <div className={styles.header}>
+        <Button
+          variant="ghost"
+          onClick={onToggleCollapse}
+          className={styles.toggle}
+        >
+          {isCollapsed ? "→" : "←"}
+        </Button>
+      </div>
 
       {/* Navigation */}
       <nav className={styles.nav}>
-        <div className={styles.item}>
-          <span className={styles.icon}>🏠</span>
-          {!isCollapsed && <span>Dashboard</span>}
-        </div>
+        <ul className={styles.list}>
+          {NAV_ITEMS.map((item) => (
+            <li key={item.label}>
+              <a href={item.href} className={styles.item}>
+                <span className={styles.icon}>{item.icon}</span>
 
-        <div className={styles.item}>
-          <span className={styles.icon}>📊</span>
-          {!isCollapsed && <span>Analytics</span>}
-        </div>
+                {!isCollapsed && (
+                  <span className={styles.label}>{item.label}</span>
+                )}
+              </a>
+            </li>
+          ))}
+        </ul>
       </nav>
     </aside>
   );
