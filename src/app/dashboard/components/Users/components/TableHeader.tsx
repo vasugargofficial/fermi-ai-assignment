@@ -11,7 +11,9 @@ export const TableHeader: React.FC<{ columns: TableColumn[]; sort: string; order
           key={col.key} onClick={() => col.sortable && onSort(col.key)}>
           <div className={styles.headerCell}>
             {col.label}
-            {col.sortable && (sort === col.key ? (order === "asc" ? "↑" : "↓") : "↑↓")}
+            <span className={styles.sortIcons}>
+              {col.sortable && (sort === col.key ? (order === "asc" ? "↑" : "↓") : "↑↓")}
+            </span>
           </div>
 
         </th>

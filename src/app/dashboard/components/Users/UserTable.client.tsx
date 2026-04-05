@@ -8,6 +8,7 @@ import { TableHeader } from "./components/TableHeader";
 import { TableBody } from "./components/TableBody";
 import { PaginationBar } from "./components/PaginationBar";
 import { SearchBar } from "./components/SearchBar";
+import { useTransition } from "react";
 
 import styles from "./UserTable.module.css";
 
@@ -21,6 +22,7 @@ export const DataTableClient: React.FC<DataTableProps> = ({
   search,
 }) => {
   const { updateQuery } = useQueryParams();
+  const [isPending, startTransition] = useTransition()
 
   const [searchInput, setSearchInput] = useState(search);
   const [localSort, setLocalSort] = useState({ sort, order });
@@ -32,7 +34,9 @@ export const DataTableClient: React.FC<DataTableProps> = ({
   }, [search]);
 
   useEffect(() => {
-    updateQuery({ search: debouncedSearch, page: 1 });
+    startTransition(() => {
+      updateQuery({ search: debouncedSearch, page: 1 });
+    });
   }, [debouncedSearch]);
 
   const handleSort = (column: string) => {
@@ -43,7 +47,9 @@ export const DataTableClient: React.FC<DataTableProps> = ({
 
     setLocalSort({ sort: column, order: newOrder });
 
-    updateQuery({ sort: column, order: newOrder, page: 1 });
+    startTransition(() => {
+      updateQuery({ sort: column, order: newOrder, page: 1 });
+    });
   };
 
   return (
@@ -58,7 +64,7 @@ export const DataTableClient: React.FC<DataTableProps> = ({
             order={localSort.order}
             onSort={handleSort}
           />
-          <TableBody data={data} columns={columns} />
+          <TableBody isLoading={isPending} data={data} columns={columns} />
         </table>
       </div>
 
