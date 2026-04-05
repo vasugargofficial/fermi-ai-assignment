@@ -1,0 +1,79 @@
+.wrapper {
+  margin-top: var(--space-lg);
+}
+
+.scroll {
+  overflow: auto;
+  border: 1px solid var(--color-border);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+/* Header */
+.th {
+  position: sticky;
+  top: 0;
+  background: var(--color-surface);
+  text-align: left;
+  padding: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 2;
+}
+
+/* Cells */
+.td {
+  padding: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface); /* BASE */
+}
+
+/* Zebra */
+.tr:nth-child(even) .td {
+  background: var(--color-surface-alt);
+}
+
+/* Hover */
+.tr:hover .td {
+  background: var(--color-surface-hover);
+}
+
+/* Sticky column */
+.sticky {
+  position: sticky;
+  left: 0;
+  z-index: 3;
+}
+
+/* Ensure sticky follows row color */
+.tr:nth-child(even) .sticky {
+  background: var(--color-surface-alt);
+}
+
+.tr:hover .sticky {
+  background: var(--color-surface-hover);
+}
+
+/* Header cell layout */
+.headerCell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Sort icons */
+.sortIcons {
+  font-size: var(--font-xs);
+  color: var(--color-text-secondary);
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md);
+}
