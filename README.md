@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dashboard Analytics (vasu)
 
-## Getting Started
+Live demo: https://example.com (dummy link)
 
-First, run the development server:
+## Getting started
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Install dependencies:
+
+```
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Run locally:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The app uses Next.js (app directory). Development server runs on the default port (3000) unless configured otherwise.
 
-## Learn More
+## File structure overview
 
-To learn more about Next.js, take a look at the following resources:
+This is a concise explanation of the main folders and their purpose:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `app/` — Next.js app routes and pages. Contains top-level pages (`page.tsx`) and API routes under `app/api/`.
+- `src/dashboard/` — Dashboard-specific pages and components (stats, users, etc.).
+- `src/components/` — Reusable UI components and layout pieces (DashboardLayout, navigation, TopNav, Sidebar).
+- `src/components/ui/` — Primitive UI building blocks (Button, Card, Input) used across the app.
+- `src/hooks/` — Custom React hooks (theme, debounced values, query params).
+- `src/lib/` — Client helpers, API clients, and utility functions.
+- `src/styles/` — Global styles, themes, and design tokens (colors, spacing, typography).
+- `src/types/` — TypeScript types for API shapes and models.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+How to read this structure: the `app/` folder is the entrypoint for pages and API routes. Components are organized by feature (dashboard, users, stats) and by UI primitives under `components/ui` to encourage reuse.
 
-## Deploy on Vercel
+## Which Part D challenges I completed
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Could not pick it up, sorry
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Notes
+
+- This README is a minimal starter. If you want, I can expand sections (detailed setup, environment variables, tests, or deployment steps).
