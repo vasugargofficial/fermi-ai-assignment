@@ -2,6 +2,8 @@
   /* Surface */
   --color-background: var(--gray-900);
   --color-surface: var(--gray-800);
+  --color-surface-alt: var(--gray-500);
+  --color-surface-hover: var(--gray-400);
   --color-surface-elevated: var(--gray-700);
 
   /* Text */
