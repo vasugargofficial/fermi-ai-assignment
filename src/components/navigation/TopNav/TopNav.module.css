@@ -1,0 +1,40 @@
+.container {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.center {
+  flex: 1;
+  max-width: 400px;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.hamburger {
+  display: none;
+}
+
+/* Mobile */
+@media (max-width: 1023px) {
+  .hamburger {
+    display: block;
+  }
+}
