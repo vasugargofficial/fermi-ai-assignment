@@ -1,9 +1,9 @@
 import { fetchUsers, UserQueryParams } from "@/lib/api";
-import { DataTable } from "./DataTable";
+import { DataTableClient } from "./UserTable.client";
 import { TableColumn, TableRow } from "./types";
 import { User } from "@/types/models";
 
-export async function UsersSection({
+export async function UsersTable({
   searchParams,
 }: {
   searchParams: UserQueryParams;
@@ -31,7 +31,7 @@ export async function UsersSection({
   ];
 
   return (
-    <DataTable
+    <DataTableClient
       data={rows}
       columns={columns}
       meta={res.meta}

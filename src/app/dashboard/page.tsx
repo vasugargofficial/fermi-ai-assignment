@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { StatsSection } from "./components/Stats/StatsSection";
-import { UsersSection } from "./components/Table/UsersSection";
+import { UsersTable } from "./components/Users/UserTable.server";
 import { UserQueryParams } from "@/lib/api";
 
 
@@ -16,7 +16,7 @@ export default async function DashboardPage({
         <StatsSection />
       </Suspense>
       <Suspense fallback={<div>Loading table...</div>}>
-        <UsersSection searchParams={resolvedParams} />
+        <UsersTable searchParams={resolvedParams} />
       </Suspense>
     </div>
   );
