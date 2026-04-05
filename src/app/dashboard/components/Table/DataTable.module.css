@@ -67,7 +67,8 @@
 /* Sort icons */
 .sortIcons {
   font-size: var(--font-xs);
-  color: var(--color-text-secondary);
+  color: var(--color-primary);
+  cursor: pointer;
 }
 
 /* Pagination */
