@@ -1,6 +1,7 @@
 import { ApiResponse, RequestOptions, HttpMethod } from "@/types/api";
 
-const baseUrl = "http://localhost:3000/api";
+const apiHost = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3000";
+const baseUrl = `${apiHost.replace(/\/$/, "")}/api`;
 
 function buildUrl(url: string, params?: RequestOptions["params"]) {
   if (!params) return `${baseUrl}/${url}`;
@@ -12,7 +13,6 @@ function buildUrl(url: string, params?: RequestOptions["params"]) {
       search.append(key, String(value));
     }
   });
-  console.log('')
   return `${baseUrl}/${url}?${search.toString()}`;
 }
 
