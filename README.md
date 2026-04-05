@@ -1,6 +1,6 @@
 # Dashboard Analytics (vasu)
 
-Live demo: [https://example.com (dummy link)](https://fermi-ai-assignment-vasu3.vercel.app)
+Live demo: [Click me](https://fermi-ai-assignment-vasu3.vercel.app)
 
 ## Getting started
 
