@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useId, useState } from "react";
-import styles from "./input.module.css";
+import styles from "./Input.module.css";
 import { InputProps } from "./types";
 import clsx from "clsx";
 
