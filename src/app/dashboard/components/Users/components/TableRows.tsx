@@ -6,7 +6,7 @@ type Props<T> = {
   columns: TableColumn[];
 };
 
-export const TableRows = <T extends { id: string | number }>({
+export const TableRows = <T extends Record<string, any> & { id: string | number }>({
   data,
   columns,
 }: Props<T>) => {

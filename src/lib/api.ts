@@ -14,7 +14,7 @@ export function fetchStats() {
 
 export function fetchUsers(params: UserQueryParams) {
   return apiClient<User[]>("users", {
-    params,
+    params: params as Record<string, string | number | undefined>,
     headers: {
       cache: "no-store"
     }
