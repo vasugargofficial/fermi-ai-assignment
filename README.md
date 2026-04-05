@@ -1,6 +1,6 @@
 # Dashboard Analytics (vasu)
 
-Live demo: https://example.com (dummy link)
+Live demo: [https://example.com (dummy link)](https://fermi-ai-assignment-vasu3.vercel.app)
 
 ## Getting started
 
@@ -30,8 +30,6 @@ This is a concise explanation of the main folders and their purpose:
 - `src/lib/` — Client helpers, API clients, and utility functions.
 - `src/styles/` — Global styles, themes, and design tokens (colors, spacing, typography).
 - `src/types/` — TypeScript types for API shapes and models.
-
-How to read this structure: the `app/` folder is the entrypoint for pages and API routes. Components are organized by feature (dashboard, users, stats) and by UI primitives under `components/ui` to encourage reuse.
 
 ## Which Part D challenges I completed
 
